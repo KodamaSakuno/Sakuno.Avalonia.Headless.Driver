@@ -14,9 +14,9 @@
 
 ## 3. Semantic observation and control queries
 
-- [ ] 3.1 Implement session/window/snapshot DTOs and bounded Semantic Tree generation from AutomationPeers with logical/visual-tree fallbacks; verify tests cover names, values, states, bounds, missing accessibility metadata, truncation markers, and subtree expansion.
-- [ ] 3.2 Implement TopLevel tracking for initial windows, subsequent windows, dialogs, and observable popups; verify tests distinguish window scope and close/remove stale window entries.
-- [ ] 3.3 Implement deterministic Element Queries with exact/contains matching, conjunctive criteria, hidden-control options, and bounded ambiguity diagnostics; verify tests cover unique, missing, ambiguous, cross-window, hidden, and unrealized virtualized targets without exposing object handles.
+- [x] 3.1 Implement session/window/snapshot DTOs and bounded Semantic Tree generation from AutomationPeers with logical/visual-tree fallbacks; verify tests cover names, values, states, bounds, missing accessibility metadata, truncation markers, and subtree expansion.
+- [x] 3.2 Implement TopLevel tracking for initial windows, subsequent windows, dialogs, and observable popups; verify tests distinguish window scope and close/remove stale window entries.
+- [x] 3.3 Implement deterministic Element Queries with exact/contains matching, conjunctive criteria, hidden-control options, and bounded ambiguity diagnostics; verify tests cover unique, missing, ambiguous, cross-window, hidden, and unrealized virtualized targets without exposing object handles.
 
 ## 4. Actions, waits, and visual observations
 

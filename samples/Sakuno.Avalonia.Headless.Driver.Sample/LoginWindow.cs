@@ -129,6 +129,14 @@ public sealed class LoginWindow : Window
         };
         AutomationProperties.SetAutomationId(scrollViewer, "SampleScrollViewer");
 
+        var virtualizedList = new ListBox
+        {
+            Name = "VirtualizedList",
+            Height = 100,
+            ItemsSource = Enumerable.Range(1, 1000).Select(index => $"Virtual item {index}").ToArray()
+        };
+        AutomationProperties.SetAutomationId(virtualizedList, "VirtualizedList");
+
         Content = new ScrollViewer
         {
             Content = new StackPanel
@@ -150,7 +158,8 @@ public sealed class LoginWindow : Window
                     hiddenButton,
                     toggleSwitch,
                     comboBox,
-                    scrollViewer
+                    scrollViewer,
+                    virtualizedList
                 }
             }
         };

@@ -6,7 +6,8 @@ using Sakuno.Avalonia.Headless.Driver.Sessions;
 
 namespace Sakuno.Avalonia.Headless.Driver.Tests;
 
-public sealed class HeadlessSessionTests : IClassFixture<HeadlessSessionFixture>
+[Collection("Headless")]
+public sealed class HeadlessSessionTests
 {
     private readonly HeadlessSessionOwner _owner;
     private readonly HeadlessSession _session;
@@ -74,6 +75,9 @@ public sealed class HeadlessSessionTests : IClassFixture<HeadlessSessionFixture>
         Assert.Equal("timeout", error.Code);
     }
 }
+
+[CollectionDefinition("Headless", DisableParallelization = true)]
+public sealed class HeadlessCollection : ICollectionFixture<HeadlessSessionFixture>;
 
 public sealed class HeadlessSessionFixture : IAsyncLifetime
 {
