@@ -50,14 +50,14 @@ public sealed class ActionAndObservationTests
         await _session.DispatchAsync(() =>
         {
             var window = Assert.IsType<LoginWindow>(_session.InitialWindow);
-            window.GetLogicalDescendants().OfType<ToggleSwitch>().Single().IsChecked = false;
+            window.GetLogicalDescendants().OfType<CheckBox>().Single().IsChecked = false;
             var outerScroll = Assert.IsType<ScrollViewer>(window.Content);
             outerScroll.Offset = new global::Avalonia.Vector(0, 10000);
             outerScroll.UpdateLayout();
             return true;
         }, TestContext.Current.CancellationToken);
-        await _actions.ExecuteAsync(new ToggleAction { Query = new ElementQuery { AutomationId = "ToggleSwitch" } }, TestContext.Current.CancellationToken);
-        var toggle = await _automation.QueryAsync(new ElementQuery { AutomationId = "ToggleSwitch" }, TestContext.Current.CancellationToken);
+        await _actions.ExecuteAsync(new ToggleAction { Query = new ElementQuery { AutomationId = "ToggleCheckBox" } }, TestContext.Current.CancellationToken);
+        var toggle = await _automation.QueryAsync(new ElementQuery { AutomationId = "ToggleCheckBox" }, TestContext.Current.CancellationToken);
         Assert.True(toggle.Matches[0].IsToggled);
 
         await _actions.ExecuteAsync(new SelectAction

@@ -98,12 +98,12 @@ public sealed class LoginWindow : Window
         };
         AutomationProperties.SetAutomationId(hiddenButton, "HiddenButton");
 
-        var toggleSwitch = new ToggleSwitch
+        var toggleCheckBox = new CheckBox
         {
-            Name = "ToggleSwitch",
+            Name = "ToggleCheckBox",
             Content = "Enable option"
         };
-        AutomationProperties.SetAutomationId(toggleSwitch, "ToggleSwitch");
+        AutomationProperties.SetAutomationId(toggleCheckBox, "ToggleCheckBox");
 
         var comboBox = new ComboBox
         {
@@ -156,7 +156,7 @@ public sealed class LoginWindow : Window
                     secondSameNameButton,
                     disabledButton,
                     hiddenButton,
-                    toggleSwitch,
+                    toggleCheckBox,
                     comboBox,
                     scrollViewer,
                     virtualizedList
