@@ -16,6 +16,9 @@ public sealed class SemanticAutomation(HeadlessSession session)
     private long _snapshotId;
 
     public IReadOnlyList<WindowInfo> Windows => _windows.GetWindows().Select(x => x.Info).ToArray();
+    internal long LastObservationId => Interlocked.Read(ref _snapshotId);
+    internal long NextObservationId() => Interlocked.Increment(ref _snapshotId);
+    internal TopLevel ResolveWindow(string windowId) => _windows.Resolve(windowId);
 
     public Task<SnapshotResponse> SnapshotAsync(
         string? windowId,
@@ -69,6 +72,11 @@ public sealed class SemanticAutomation(HeadlessSession session)
                 Interlocked.Increment(ref _snapshotId),
                 matches.Select(x => CreateNode(x.Control, x.TopLevel, x.Path, 0, session.Configuration.Snapshot)).ToArray());
         }, token), session.Configuration.ActionTimeout, cancellationToken);
+
+    internal IReadOnlyList<SemanticNode> Find(ElementQuery query) =>
+        FindControls(query, 100)
+            .Select(x => CreateNode(x.Control, x.TopLevel, x.Path, 0, session.Configuration.Snapshot))
+            .ToArray();
 
     internal Control ResolveSingle(ElementQuery query)
     {

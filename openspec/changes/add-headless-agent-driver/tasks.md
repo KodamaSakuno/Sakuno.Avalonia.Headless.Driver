@@ -20,10 +20,10 @@
 
 ## 4. Actions, waits, and visual observations
 
-- [ ] 4.1 Implement atomic query-and-input actions for click, focus, toggle, selection, scrolling, key, and pointer input; verify tests exercise focus, hit testing, routed commands, disabled/hidden targets, and TopLevel-relative coordinates.
-- [ ] 4.2 Implement `replace`, `append`, and `clear` text actions without implicit Enter or payload echo; verify tests cover editing semantics and confirm plaintext input is absent from responses and logs.
-- [ ] 4.3 Implement structured condition evaluation and polling for existence, visibility, enablement, focus, selection, text, and values; verify tests distinguish business-condition timeout from completed UI queue processing and enforce the 60-second configuration ceiling.
-- [ ] 4.4 Implement per-window PNG capture and dimension/scaling metadata; verify tests decode a nonempty PNG and verify password fields remain masked in semantic observations.
+- [x] 4.1 Implement atomic query-and-input actions for click, focus, toggle, selection, scrolling, key, and pointer input; verify tests exercise focus, hit testing, routed commands, disabled/hidden targets, and TopLevel-relative coordinates.
+- [x] 4.2 Implement `replace`, `append`, and `clear` text actions without implicit Enter or payload echo; verify tests cover editing semantics and confirm plaintext input is absent from responses and logs.
+- [x] 4.3 Implement structured condition evaluation and polling for existence, visibility, enablement, focus, selection, text, and values; verify tests distinguish business-condition timeout from completed UI queue processing and enforce the 60-second configuration ceiling.
+- [x] 4.4 Implement per-window PNG capture and dimension/scaling metadata; verify tests decode a nonempty PNG and verify password fields remain masked in semantic observations.
 
 ## 5. Local HTTP API and process security
 
