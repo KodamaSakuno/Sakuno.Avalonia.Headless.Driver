@@ -22,7 +22,7 @@ public sealed class ActionExecutor(HeadlessSession session, SemanticAutomation a
                 target = automation.ResolveSingle(targeted.Query);
                 ValidateTarget(target);
                 target.BringIntoView();
-                target.UpdateLayout();
+                automation.ResolveWindow(target).UpdateLayout();
                 ExecuteTargeted(target, targeted);
                 break;
             case KeyAction key:

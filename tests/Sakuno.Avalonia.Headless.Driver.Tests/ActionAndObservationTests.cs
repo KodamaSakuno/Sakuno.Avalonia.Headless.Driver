@@ -47,6 +47,15 @@ public sealed class ActionAndObservationTests
         var cleared = await _automation.QueryAsync(username, TestContext.Current.CancellationToken);
         Assert.True(string.IsNullOrEmpty(cleared.Matches[0].Value));
 
+        await _session.DispatchAsync(() =>
+        {
+            var window = Assert.IsType<LoginWindow>(_session.InitialWindow);
+            window.GetLogicalDescendants().OfType<ToggleSwitch>().Single().IsChecked = false;
+            var outerScroll = Assert.IsType<ScrollViewer>(window.Content);
+            outerScroll.Offset = new global::Avalonia.Vector(0, 10000);
+            outerScroll.UpdateLayout();
+            return true;
+        }, TestContext.Current.CancellationToken);
         await _actions.ExecuteAsync(new ToggleAction { Query = new ElementQuery { AutomationId = "ToggleSwitch" } }, TestContext.Current.CancellationToken);
         var toggle = await _automation.QueryAsync(new ElementQuery { AutomationId = "ToggleSwitch" }, TestContext.Current.CancellationToken);
         Assert.True(toggle.Matches[0].IsToggled);

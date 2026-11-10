@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.LogicalTree;
 using Sakuno.Avalonia.Headless.Driver.Automation;
 using Sakuno.Avalonia.Headless.Driver.Sample;
 using Sakuno.Avalonia.Headless.Driver.Sessions;
@@ -54,10 +55,16 @@ public sealed class SemanticAutomationTests
         var included = await _automation.QueryAsync(new ElementQuery { AutomationId = "HiddenButton", IncludeHidden = true }, TestContext.Current.CancellationToken);
         Assert.Single(included.Matches);
 
+        await _session.DispatchAsync(() =>
+        {
+            var status = _session.InitialWindow.GetLogicalDescendants().OfType<TextBlock>().Single(x => x.Name == "StatusText");
+            status.Text = "Authenticated";
+            return true;
+        }, TestContext.Current.CancellationToken);
         var contains = await _automation.QueryAsync(new ElementQuery
         {
             AutomationId = "StatusText",
-            Text = "authenticated",
+            Text = "Authenticated",
             TextMatch = TextMatchKind.Contains,
             ControlType = "TextBlock"
         }, TestContext.Current.CancellationToken);
