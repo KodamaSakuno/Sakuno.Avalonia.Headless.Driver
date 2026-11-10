@@ -41,4 +41,4 @@
 
 - [x] 7.1 Configure NuGet packaging to include the driver library, canonical Skill template, configuration schema, and static OpenAPI document; verify `dotnet pack` succeeds and a fresh sample consumer can restore and run the packaged artifacts.
 - [ ] 7.2 Add a Windows, macOS, and Linux CI matrix that builds and runs xUnit v3 tests through Microsoft.Testing.Platform v2; verify all supported environments pass without VSTest, a display server, or cross-platform pixel-identical screenshot assertions.
-- [ ] 7.3 Run the complete real-HTTP acceptance workflow for login success, bad password, delayed completion, ambiguity, timeout, concurrency conflict, screenshot, redaction, shutdown, idle recovery, and stale sessions; verify the final build, full test suite, package, and Skill-documented workflow all pass on the deliverable.
+- [x] 7.3 Run the complete real-HTTP acceptance workflow for login success, bad password, delayed completion, ambiguity, timeout, concurrency conflict, screenshot, redaction, shutdown, idle recovery, and stale sessions; verify the final build, full test suite, package, and Skill-documented workflow all pass on the deliverable.
