@@ -4,6 +4,13 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Sakuno.Avalonia.Headless.Driver</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Sakuno</Authors>
+    <Description>Persistent local HTTP automation for Avalonia Headless applications.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Avalonia;Headless;Testing;Agent</PackageTags>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +19,8 @@
 
   <ItemGroup>
     <None Include="Hosting/openapi.json" Link="openapi/v1.json" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="openapi/v1.json" />
+    <None Include="Configuration/headless-driver.schema.json" Link="schemas/headless-driver.schema.json" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="schemas/headless-driver.schema.json" />
+    <None Include="Skill/SKILL.md" Pack="true" PackagePath="skills/avalonia-headless-driver/SKILL.md" />
   </ItemGroup>
 
   <ItemGroup>

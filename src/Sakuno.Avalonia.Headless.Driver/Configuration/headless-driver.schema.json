@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sakuno.dev/schemas/headless-driver/v1.json",
+  "title": "Avalonia Headless Driver local configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "startupAdapter"],
+  "properties": {
+    "version": { "const": 1 },
+    "startupAdapter": { "type": "string", "minLength": 1, "maxLength": 1024 },
+    "rendering": { "type": "boolean", "default": true },
+    "actionTimeoutSeconds": { "type": "integer", "minimum": 1, "maximum": 60, "default": 5 },
+    "waitTimeoutSeconds": { "type": "integer", "minimum": 1, "maximum": 60, "default": 10 },
+    "idleTimeoutSeconds": { "type": ["integer", "null"], "minimum": 1, "maximum": 86400, "default": 600 },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxDepth": { "type": "integer", "minimum": 1, "maximum": 32, "default": 4 },
+        "maxNodes": { "type": "integer", "minimum": 1, "maximum": 10000, "default": 500 },
+        "maxTextLength": { "type": "integer", "minimum": 16, "maximum": 10000, "default": 500 }
+      }
+    }
+  }
+}

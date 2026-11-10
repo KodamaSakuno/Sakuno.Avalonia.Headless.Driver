@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test-pack:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.x
+      - run: dotnet restore Sakuno.Avalonia.Headless.Driver.slnx
+      - run: dotnet build Sakuno.Avalonia.Headless.Driver.slnx --no-restore
+      - run: dotnet test Sakuno.Avalonia.Headless.Driver.slnx --no-build
+      - run: dotnet pack src/Sakuno.Avalonia.Headless.Driver/Sakuno.Avalonia.Headless.Driver.csproj --no-build --output artifacts/packages
