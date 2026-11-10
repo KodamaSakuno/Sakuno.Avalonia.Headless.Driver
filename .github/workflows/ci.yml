@@ -17,6 +17,6 @@ jobs:
         with:
           dotnet-version: 10.x
       - run: dotnet restore Sakuno.Avalonia.Headless.Driver.slnx
-      - run: dotnet build Sakuno.Avalonia.Headless.Driver.slnx --no-restore
-      - run: dotnet test Sakuno.Avalonia.Headless.Driver.slnx --no-build
-      - run: dotnet pack src/Sakuno.Avalonia.Headless.Driver/Sakuno.Avalonia.Headless.Driver.csproj --no-build --output artifacts/packages
+      - run: dotnet build Sakuno.Avalonia.Headless.Driver.slnx -c Release --no-restore
+      - run: dotnet test Sakuno.Avalonia.Headless.Driver.slnx -c Release --no-build
+      - run: dotnet pack src/Sakuno.Avalonia.Headless.Driver/Sakuno.Avalonia.Headless.Driver.csproj -c Release --no-build --output artifacts/packages
