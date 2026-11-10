@@ -2,8 +2,8 @@
 
 ## 1. Solution and dependency foundation
 
-- [ ] 1.1 Add the `net10.0` driver library, sample application, sample Console Host, and xUnit v3/MTPv2 executable test projects to the solution; verify `dotnet restore`, `dotnet build`, and an initial `dotnet test` through Microsoft.Testing.Platform v2 succeed without VSTest.
-- [ ] 1.2 Configure centrally managed Avalonia 12.1.x, Headless, Skia, ASP.NET Core/OpenAPI, xUnit v3, and Microsoft.Testing.Platform v2 dependencies; verify restore reports no target-framework or Avalonia version conflicts.
+- [x] 1.1 Add the `net10.0` driver library, sample application, sample Console Host, and xUnit v3/MTPv2 executable test projects to the solution; verify `dotnet restore`, `dotnet build`, and an initial `dotnet test` through Microsoft.Testing.Platform v2 succeed without VSTest.
+- [x] 1.2 Configure centrally managed Avalonia 12.1.x, Headless, Skia, ASP.NET Core/OpenAPI, xUnit v3, and Microsoft.Testing.Platform v2 dependencies; verify restore reports no target-framework or Avalonia version conflicts.
 
 ## 2. Persistent Headless session hosting
 
