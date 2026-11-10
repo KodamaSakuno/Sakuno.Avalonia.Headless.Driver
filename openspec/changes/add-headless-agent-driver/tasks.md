@@ -8,8 +8,8 @@
 ## 2. Persistent Headless session hosting
 
 - [x] 2.1 Implement versioned local configuration and compiled Startup Adapter resolution without dynamic assembly loading; verify unit tests accept valid settings and reject unknown types, unsafe overrides, invalid limits, and unsupported runtime/package combinations.
-- [ ] 2.2 Implement the long-lived single-session owner and Startup Adapter execution with Skia Headless rendering; verify integration tests preserve login control state across calls and reject a second active session.
-- [ ] 2.3 Implement the non-queueing session gate, serialized UI dispatch, operation deadlines, and cancellation; verify tests return `session_busy` for overlap and cancel waits without running queued UI work.
+- [x] 2.2 Implement the long-lived single-session owner and Startup Adapter execution with Skia Headless rendering; verify integration tests preserve login control state across calls and reject a second active session.
+- [x] 2.3 Implement the non-queueing session gate, serialized UI dispatch, operation deadlines, and cancellation; verify tests return `session_busy` for overlap and cancel waits without running queued UI work.
 - [ ] 2.4 Implement close-and-exit and fresh-process recovery semantics; verify process tests complete the close response, terminate the Host, and reject the old session identity after restart.
 
 ## 3. Semantic observation and control queries
