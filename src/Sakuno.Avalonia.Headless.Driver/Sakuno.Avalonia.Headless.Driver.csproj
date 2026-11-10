@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Hosting/openapi.json" Link="openapi/v1.json" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="openapi/v1.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Headless" />
     <PackageReference Include="Avalonia.Skia" />

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "startupAdapter": "Sakuno.Avalonia.Headless.Driver.Sample.SampleStartupAdapter, Sakuno.Avalonia.Headless.Driver.Sample",
+  "rendering": true,
+  "actionTimeoutSeconds": 5,
+  "waitTimeoutSeconds": 10,
+  "idleTimeoutSeconds": 600,
+  "snapshot": {
+    "maxDepth": 4,
+    "maxNodes": 500,
+    "maxTextLength": 500
+  }
+}

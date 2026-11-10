@@ -1,8 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Sakuno.Avalonia.Headless.Driver\Sakuno.Avalonia.Headless.Driver.csproj" />
     <ProjectReference Include="..\Sakuno.Avalonia.Headless.Driver.Sample\Sakuno.Avalonia.Headless.Driver.Sample.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="headless-driver.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <PropertyGroup>

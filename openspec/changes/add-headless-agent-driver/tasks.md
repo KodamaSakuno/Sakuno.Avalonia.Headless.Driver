@@ -10,7 +10,7 @@
 - [x] 2.1 Implement versioned local configuration and compiled Startup Adapter resolution without dynamic assembly loading; verify unit tests accept valid settings and reject unknown types, unsafe overrides, invalid limits, and unsupported runtime/package combinations.
 - [x] 2.2 Implement the long-lived single-session owner and Startup Adapter execution with Skia Headless rendering; verify integration tests preserve login control state across calls and reject a second active session.
 - [x] 2.3 Implement the non-queueing session gate, serialized UI dispatch, operation deadlines, and cancellation; verify tests return `session_busy` for overlap and cancel waits without running queued UI work.
-- [ ] 2.4 Implement close-and-exit and fresh-process recovery semantics; verify process tests complete the close response, terminate the Host, and reject the old session identity after restart.
+- [x] 2.4 Implement close-and-exit and fresh-process recovery semantics; verify process tests complete the close response, terminate the Host, and reject the old session identity after restart.
 
 ## 3. Semantic observation and control queries
 
@@ -27,14 +27,14 @@
 
 ## 5. Local HTTP API and process security
 
-- [ ] 5.1 Implement the `/v1` session, snapshot, query, action, wait, screenshot, and capability endpoints, and generate a static OpenAPI document at build time; verify contract tests compare real requests and responses with the packaged schemas, including binary `image/png` responses, and `/openapi/v1.json` returns 404.
-- [ ] 5.2 Implement loopback-only random-port binding, per-process bearer authentication, and the single JSON stdout readiness record with diagnostics on stderr; verify process tests reject missing/invalid tokens, parse the handshake, and find no repeated token in logs.
-- [ ] 5.3 Implement the stable error envelope and HTTP status mapping with bounded diagnostics and sanitized internal failures; verify tests cover 400, 401, 404, 408, 409, 410, 422, and 500 paths without default stack or sensitive-data disclosure.
-- [ ] 5.4 Implement request-size limits, authenticated activity tracking, configurable idle expiration, and shutdown cancellation; verify process tests reject disallowed code/assembly/shell/file inputs and exit after a shortened idle timeout.
+- [x] 5.1 Implement the `/v1` session, snapshot, query, action, wait, screenshot, and capability endpoints, and generate a static OpenAPI document at build time; verify contract tests compare real requests and responses with the packaged schemas, including binary `image/png` responses, and `/openapi/v1.json` returns 404.
+- [x] 5.2 Implement loopback-only random-port binding, per-process bearer authentication, and the single JSON stdout readiness record with diagnostics on stderr; verify process tests reject missing/invalid tokens, parse the handshake, and find no repeated token in logs.
+- [x] 5.3 Implement the stable error envelope and HTTP status mapping with bounded diagnostics and sanitized internal failures; verify tests cover 400, 401, 404, 408, 409, 410, 422, and 500 paths without default stack or sensitive-data disclosure.
+- [x] 5.4 Implement request-size limits, authenticated activity tracking, configurable idle expiration, and shutdown cancellation; verify process tests reject disallowed code/assembly/shell/file inputs and exit after a shortened idle timeout.
 
 ## 6. Sample consumer and Agent Skill
 
-- [ ] 6.1 Complete the sample login application and its Startup Adapter with successful, failed, and delayed authentication paths; verify its Console Host starts without production `Program.Main` and the sample supports each intended test scenario.
+- [x] 6.1 Complete the sample login application and its Startup Adapter with successful, failed, and delayed authentication paths; verify its Console Host starts without production `Program.Main` and the sample supports each intended test scenario.
 - [ ] 6.2 Author the English canonical Skill template and installation guidance for both `.agents/skills/avalonia-headless-driver/` and `.claude/skills/avalonia-headless-driver/`; verify the documented startup, capability check, curl/curl.exe, observation-action-verification, screenshot, and shutdown workflow against the real sample Host.
 
 ## 7. Release and cross-platform verification
