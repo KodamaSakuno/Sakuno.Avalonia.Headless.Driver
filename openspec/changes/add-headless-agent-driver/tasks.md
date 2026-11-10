@@ -35,7 +35,7 @@
 ## 6. Sample consumer and Agent Skill
 
 - [x] 6.1 Complete the sample login application and its Startup Adapter with successful, failed, and delayed authentication paths; verify its Console Host starts without production `Program.Main` and the sample supports each intended test scenario.
-- [ ] 6.2 Author the English canonical Skill template and installation guidance for both `.agents/skills/avalonia-headless-driver/` and `.claude/skills/avalonia-headless-driver/`; verify the documented startup, capability check, curl/curl.exe, observation-action-verification, screenshot, and shutdown workflow against the real sample Host.
+- [x] 6.2 Author the English canonical Skill template and installation guidance for both `.agents/skills/avalonia-headless-driver/` and `.claude/skills/avalonia-headless-driver/`; verify the documented startup, capability check, curl/curl.exe, observation-action-verification, screenshot, and shutdown workflow against the real sample Host.
 
 ## 7. Release and cross-platform verification
 
